@@ -36,4 +36,43 @@ class ContainerAwareAttribute extends Attribute implements \Symfony\Component\De
         // Set user
         $this->user = $this->securityContext->getToken()-getUser();
     }
+    
+    /**
+     * Construct
+     * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+     */
+    public function __construct(\Symfony\Component\DependencyInjection\ContainerInterface $container)
+    {
+        $this->setContainer($container);
+    }
+    
+    /**
+     * Get user
+     * @return \Landmarx\Bundle\UserBundle\Document\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    
+    /**
+     * Set user
+     * @param \Landmarx\Bundle\UserBundle\Document\User $user
+     * @return \Landmarx\Bundle\AttributeBundle\Document\ContainerAwareAttribute
+     */
+    public function setUser(\Landmarx\Bundle\UserBundle\Document\User $user)
+    {
+        $this->user = $user;
+        
+        return $this;
+    }
+    
+    /**
+     * Get SecurityContext
+     * @return SecurityContext
+     */
+    public function getSecurityContext()
+    {
+        return $this->securityContext;
+    }
 }

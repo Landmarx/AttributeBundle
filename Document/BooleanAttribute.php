@@ -1,7 +1,7 @@
 <?php
 namespace Landmarx\Bundle\AttributeBundle\Document;
 
-class BooleanAttribute extends \Landmarx\Bundle\AttributeBundle\Document\Attribute
+abstract class BooleanAttribute extends \Landmarx\Bundle\AttributeBundle\Document\Attribute
 {
     /**
      * Get option
